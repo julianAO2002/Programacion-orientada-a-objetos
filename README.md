@@ -23,5 +23,3 @@ El proyecto incluye temas como:
 
 ---
 
-## Estructura del repositorio
-
