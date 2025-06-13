@@ -26,16 +26,14 @@ Y, al menos, los siguientes métodos:
 Recordatorio: una elipse queda definida por su radio mayor (R) y su radio menor (r), tal que el área de una elipse es igual a π*(R*r).  
 Agregue los métodos toString(), y para calcular el área, perímetro (use una fórmula simplificada) y cambiar el tamaño, al igual que en Rectángulo.
 
-### c)
-Defina una clase Cuadrado que herede de la clase Rectángulo.  
+### c)Defina una clase Cuadrado que herede de la clase Rectángulo.  
 ¿Cómo debería ser el constructor de Cuadrado?  
 Si Rectángulo tuviera métodos como setLadoMenor() y setLadoMayor(), ¿Cómo debería Cuadrado sobrescribirlos para mantener la integridad de un cuadrado (donde ambos lados deben ser iguales)?
 
 ### d) Defina una clase Círculo que herede de la clase Elipse.  
 ¿Cómo sería su constructor y cómo se relaciona con el de Elipse? (Radio mayor = Radio menor)
 
-### e)
-Realice un programa que defina varias figuras diferentes, cree una collection de objetos de la clase Figura.  
+### e)Realice un programa que defina varias figuras diferentes, cree una collection de objetos de la clase Figura.  
 El programa debe realizar un bucle que recorra todas las figuras, las ponga todas del mismo color y las mueva a una determinada posición.
 
 ### f) Analice qué ocurre en el ejercicio anterior si se intenta imprimir la información de cada figura (llamando al método toString) y qué sucede si se intenta obtener en ese bucle el área y perímetro de todas las figuras de la collection.
