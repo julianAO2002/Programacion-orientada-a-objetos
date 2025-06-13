@@ -1,96 +1,64 @@
-# Trabajo Práctico 3 – Java: Conceptos Básicos
+# Trabajo Práctico 3 – Java. Conceptos básicos
 
-Este repositorio contiene la resolución del Trabajo Práctico 3 de la materia Programación Básica en Java, con ejercicios orientados a conceptos fundamentales como manejo de condiciones, arreglos, clases y métodos.
+1. Escriba un programa que lea tres números y si el primero es positivo calcule el producto de los otros dos,  
+   en otro caso calcule la suma.
 
----
+2. Clasificador de Calificaciones:  
+   • Ingresa una calificación numérica (por ejemplo, de 0 a 10).  
+   • Utiliza una serie de if-else if-else para clasificar la calificación en categorías como "Aprobado", "Reprobado",  
+     "Sobresaliente", etc. Define tus propios rangos.
 
-## Contenido de los ejercicios
+3. Implemente un programa que indique si una palabra es un palíndromo.  
+   Una palabra es palíndromo si se lee igual de izquierda a derecha que de derecha a izquierda.
 
-### 1. Producto o suma según condición
+4. Considere lo siguiente (no usar bloque de código):
 
-Programa que lee tres números y, si el primero es positivo, calcula el producto de los otros dos; en caso contrario, calcula la suma.
+    public class ArrayEntero{
+        private int[] numeros = {4,2,3,8,1};
+    }
 
-### 2. Clasificador de Calificaciones
+   Escriba métodos que devuelvan:  
+   • Cuantos números hay en el array números  
+   • Cual es el mayor  
+   • Cual es el promedio  
+   • Los números ordenados de menor a mayor y a la inversa
 
-Recibe una calificación numérica y la clasifica en categorías definidas (ej. "Aprobado", "Reprobado", "Sobresaliente") usando estructuras condicionales `if-else if-else`.
+5. Considere la siguiente clase:
 
-### 3. Palíndromo
+    public class Entero {
+        private int numero;
 
-Determina si una palabra es un palíndromo, es decir, si se lee igual de izquierda a derecha y viceversa.
+        //constructor de la clase Enteros
+        public Entero(int numero) {
+            super();
+            this.numero = numero;
+        }
 
-### 4. Clase `ArrayEntero`
+        public int getNumero() {
+            return numero;
+        }
 
-Clase con un arreglo interno de números enteros, que incluye métodos para:
+        public void setNumero(int numero) {
+            this.numero = numero;
+        }
 
-- Contar cuántos números hay
-- Encontrar el mayor número
-- Calcular el promedio
-- Ordenar los números de menor a mayor y a la inversa
+        //calcula el cuadrado de n
+        public long cuadrado(){
+            return numero*numero;
+        }
+    }
 
-### 5. Clase `Entero`
+   Agregue métodos para calcular:  
+   • si el numero es par o impar  
+   • el factorial de numero  
+   • si numero es primo  
+   **Pruébelos.**
 
-Clase con un atributo `numero` y métodos para:
+6. Cree una aplicación que gestione empleados y permita:  
+   • Registrar nombre y sueldo de empleados.  
+   • Devolver el nombre y sueldo del empleado que más gana.  
+   • Devolver el sueldo promedio.
 
-- Obtener y modificar el número
-- Calcular el cuadrado
-- Determinar si es par o impar
-- Calcular el factorial
-- Verificar si el número es primo
-
-### 6. Gestión de empleados
-
-Aplicación que permite:
-
-- Registrar nombre y sueldo de empleados
-- Obtener el empleado con mayor sueldo
-- Calcular el sueldo promedio de todos los empleados
-
----
-
-## Estructura del proyecto
-
-# Trabajo Práctico 3 – Java: Conceptos Básicos
-
-Este repositorio contiene la resolución del Trabajo Práctico 3 de la materia Programación Básica en Java, con ejercicios orientados a conceptos fundamentales como manejo de condiciones, arreglos, clases y métodos.
-
----
-
-## Contenido de los ejercicios
-
-### 1. Producto o suma según condición
-
-Programa que lee tres números y, si el primero es positivo, calcula el producto de los otros dos; en caso contrario, calcula la suma.
-
-### 2. Clasificador de Calificaciones
-
-Recibe una calificación numérica y la clasifica en categorías definidas (ej. "Aprobado", "Reprobado", "Sobresaliente") usando estructuras condicionales `if-else if-else`.
-
-### 3. Palíndromo
-
-Determina si una palabra es un palíndromo, es decir, si se lee igual de izquierda a derecha y viceversa.
-
-### 4. Clase `ArrayEntero`
-
-Clase con un arreglo interno de números enteros, que incluye métodos para:
-
-- Contar cuántos números hay
-- Encontrar el mayor número
-- Calcular el promedio
-- Ordenar los números de menor a mayor y a la inversa
-
-### 5. Clase `Entero`
-
-Clase con un atributo `numero` y métodos para:
-
-- Obtener y modificar el número
-- Calcular el cuadrado
-- Determinar si es par o impar
-- Calcular el factorial
-- Verificar si el número es primo
-
-### 6. Gestión de empleados
-
-Aplicación que permite:
 
 - Registrar nombre y sueldo de empleados
 - Obtener el empleado con mayor sueldo
