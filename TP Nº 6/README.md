@@ -1,18 +1,9 @@
-## Getting Started
+### 10.13 (Interfaz ImpactoEcológico: polimorfismo)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Mediante el uso de interfaces, como aprendió en este capítulo, es posible especificar comportamientos similares para clases que pueden ser dispares. Los gobiernos y las compañías en todo el mundo se están preocupando cada vez más por el impacto ecológico del carbono (las liberaciones anuales de dióxido de carbono en la atmósfera), debido a los edificios que consumen diversos tipos de combustibles para obtener calor, los vehículos que queman combustibles para producir energía, y demás. Muchos científicos culpan a estos gases de invernadero por el fenómeno conocido como calentamiento global.
 
-## Folder Structure
+Cree tres pequeñas clases no relacionadas por herencia: las clases **Edificio**, **Auto** y **Bicicleta**. Proporcione a cada clase ciertos atributos y comportamientos apropiados que sean únicos, que no tengan en común con otras clases.
 
-The workspace contains two folders by default, where:
+Escriba la interfaz **ImpactoEcologico** con un método `obtenerImpactoEcologico`. Haga que cada una de sus clases implemente esa interfaz, de modo que su método `obtenerImpactoEcologico` calcule el impacto ecológico del carbono apropiado para esa clase (consulte sitios Web que expliquen cómo calcular el impacto ecológico del carbono).
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Escriba una aplicación que cree objetos de cada una de las tres clases, coloque referencias a esos objetos en `ArrayList<ImpactoEcologico>` y después itere a través del objeto `ArrayList`, invocando en forma polimórfica el método `obtenerImpactoEcologico` de cada objeto. Para cada objeto imprima cierta información de identificación, además de su impacto ecológico.
