@@ -1,19 +1,43 @@
-
 // Clase App.java (Prueba)
-class App {
-    public static void main(String args[]) {
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Iniciando pruebas de MatrizObjetos...\n");
+
+        // Test 1: Crear matriz con dimensiones negativas
+        System.out.println("Test 1: Intentando crear matriz con dimensiones negativas");
         try {
-            MatrizObjetos ma = new MatrizObjetos(199, 2);
-            System.out.println(ma.toString());
-            String st1 = new String(" esto es un String ");
-            Integer entero = new Integer(10);
-            ma.SetRowCol(0, 0, st1);
-            ma.SetRowCol(1, 0, entero);
-            System.out.println(ma.GetRowCol(0, 0));
-            ma.SetRowCol(10, 0, st1);
-            System.out.println(ma);
+            MatrizObjetos matriz = new MatrizObjetos(-1, 5);
         } catch (MatrizException e) {
-            System.out.println(e);
+            System.out.println("Error capturado (como se esperaba): " + e.getMessage());
+        }
+
+        // Test 2: Acceder a fila inválida
+        System.out.println("\nTest 2: Intentando acceder a fila fuera de rango");
+        try {
+            MatrizObjetos matriz = new MatrizObjetos(5, 5);
+            matriz.SetRowCol(201, 1, "test");
+        } catch (MatrizException e) {
+            System.out.println("Error capturado (como se esperaba): " + e.getMessage());
+        }
+
+        // Test 3: Acceder a columna inválida
+        System.out.println("\nTest 3: Intentando acceder a columna fuera de rango");
+        try {
+            MatrizObjetos matriz = new MatrizObjetos(5, 5);
+            Object obj = matriz.GetRowCol(0, 201);
+        } catch (MatrizException e) {
+            System.out.println("Error capturado (como se esperaba): " + e.getMessage());
+        }
+
+        // Test 4: Operación válida (caso de éxito)
+        System.out.println("\nTest 4: Realizando operación válida");
+        try {
+            MatrizObjetos matriz = new MatrizObjetos(3, 3);
+            matriz.SetRowCol(0, 0, "Valor insertado");
+            Object resultado = matriz.GetRowCol(0, 0);
+            System.out.println("Operación exitosa: " + resultado);
+        } catch (MatrizException e) {
+            System.out.println("Error inesperado: " + e.getMessage());
         }
     }
 }

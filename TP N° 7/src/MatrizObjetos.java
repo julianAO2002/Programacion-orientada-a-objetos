@@ -1,38 +1,50 @@
-
-
 public class MatrizObjetos {
     static int max_rows = 200;
     static int max_cols = 200;
     private Vector cuerpo[];
 
-    MatrizObjetos(int columnas, int filas) throws MatrizException {
+    MatrizObjetos(int columnas, int filas) throws MatrizException {        
+        if (columnas < 0 || filas < 0) {
+            throw new MatrizException(MatrizException.ERR_DIMENSIONES_NEGATIVAS);
+        }        
+        
         if (columnas > max_cols) {
-            throw new MatrizException("Excede la cantidad de columnas");
-        } else {
-            cuerpo = new Vector[filas];
-            for (int i = 0; i < filas; i++) {
-                cuerpo[i] = new Vector(2);
-            }
+            throw new MatrizException(MatrizException.ERR_COLUMNAS_EXCEDIDAS);
+        }
+        
+        if (filas > max_rows) {
+            throw new MatrizException(MatrizException.ERR_FILAS_EXCEDIDAS);
+        }
+        
+        cuerpo = new Vector[filas];
+        for (int i = 0; i < filas; i++) {
+            cuerpo[i] = new Vector(columnas); // Ahora usa 'columnas' en lugar de 2
         }
     }
 
-    public void SetRowCol(int row, int col, Object obj) {
-        try {
-            cuerpo[row].add(col, obj);
-        } catch (Exception e) {
-            System.out.println("ERRRRROOOOOOOR!!!!!");
-            System.out.println(e);
+    public void SetRowCol(int row, int col, Object obj) throws MatrizException {        
+        if (row < 0 || row >= cuerpo.length) {
+            throw new MatrizException(MatrizException.ERR_FILA_FUERA_DE_RANGO);
         }
+
+        if (col < 0 || col >= max_cols) {
+            throw new MatrizException(MatrizException.ERR_COLUMNA_FUERA_DE_RANGO);
+        }
+
+        
+        cuerpo[row].add(col, obj);
     }
 
-    public Object GetRowCol(int row, int col) {
-        Object obj = null;
-        try {
-            obj = cuerpo[row].elementAt(col);
-        } catch (Exception e) {
-            System.out.println("ERROR -> :" + e);
+    public Object GetRowCol(int row, int col) throws MatrizException {
+        if (row < 0 || row >= cuerpo.length) {
+            throw new MatrizException(MatrizException.ERR_FILA_FUERA_DE_RANGO);
         }
-        return obj;
+
+        if (col < 0 || col >= max_cols) {
+            throw new MatrizException(MatrizException.ERR_COLUMNA_FUERA_DE_RANGO);
+        }
+        
+        return cuerpo[row].elementAt(col);
     }
 
     public String toString() {
