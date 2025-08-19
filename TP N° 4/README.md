@@ -60,15 +60,48 @@ Debe permitir:
 
 ## Diagrama de clases
 
-Representa las clases:
-- `Continente`
-- `País`
-- `Provincia`
-- `MapaMundial`
+## Diagrama de Clases
 
-Y sus relaciones:
-- Asociación entre Continente → País
-- Asociación entre País → Provincia
+- **MapaMundial**
+  - continentes: Set<Continente>
+  - Métodos:
+    - getPaises(continenteNombre)
+    - getProvincias(paisNombre)
+    - getTodosLosPaises()
+    - buscarPaisPorNombre(nombre)
+
+    |
+    |-- contiene --> *Continente*
+
+- **Continente**
+  - nombre: String
+  - paises: List<Pais>
+  - Métodos:
+    - agregarPais(Pais)
+    - getPaises()
+    - getNombre()
+
+    |
+    |-- contiene --> *Pais*
+
+- **Pais**
+  - nombre: String
+  - capital: String
+  - superficie: Integer
+  - provincias: List<Provincia>
+  - Métodos:
+    - addProvincia(Provincia)
+    - getProvincias()
+    - getNombre()
+    - getSuperficie()
+
+    |
+    |-- contiene --> *Provincia*
+
+- **Provincia**
+  - nombre: String
+  - Métodos:
+    - getNombre()
 
 ---
 

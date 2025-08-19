@@ -4,6 +4,28 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MapaMundial {
+    public Set<Continente> getContinentes() {
+        return continentes;
+    }
+
+    public java.util.List<Pais> getTodosLosPaises() {
+        java.util.List<Pais> lista = new java.util.ArrayList<>();
+        for (Continente continente : continentes) {
+            lista.addAll(continente.getPaises());
+        }
+        return lista;
+    }
+
+    public Pais buscarPaisPorNombre(String nombre) {
+        for (Continente continente : continentes) {
+            for (Pais pais : continente.getPaises()) {
+                if (pais.getNombre().equalsIgnoreCase(nombre)) {
+                    return pais;
+                }
+            }
+        }
+        return null;
+    }
     
     private Set<Continente> continentes;
     
@@ -62,6 +84,15 @@ public class MapaMundial {
         Pais portugal = new Pais("Portugal", "Lisboa", 92212);
         europa.agregarPais(portugal);
 
+        Pais alemania = new Pais("Alemania", "Berlin", 357386);
+        europa.agregarPais(alemania);
+
+        Pais suiza = new Pais("Suiza", "Berna", 41285);
+        europa.agregarPais(suiza);
+
+        Pais austria = new Pais("Austria", "Viena", 83879);
+        europa.agregarPais(austria);
+
         // Agregar continentes al mapa
         continentes.add(america);
         continentes.add(europa);
@@ -69,6 +100,74 @@ public class MapaMundial {
         continentes.add(africa);
         continentes.add(oceania);
         continentes.add(antartida);
+
+        // Limítrofes de Argentina
+        argentina.agregarLimitrofe(uruguay);
+        argentina.agregarLimitrofe(brasil);
+        argentina.agregarLimitrofe(chile);
+        argentina.agregarLimitrofe(paraguay);
+        argentina.agregarLimitrofe(bolivia);
+
+        // Limítrofes de Uruguay
+        uruguay.agregarLimitrofe(argentina);
+        uruguay.agregarLimitrofe(brasil);
+
+        // Limítrofes de Brasil
+        brasil.agregarLimitrofe(argentina);
+        brasil.agregarLimitrofe(uruguay);
+        brasil.agregarLimitrofe(paraguay);
+        brasil.agregarLimitrofe(bolivia);
+
+        // Limítrofes de Chile
+        chile.agregarLimitrofe(argentina);
+        chile.agregarLimitrofe(bolivia);
+
+        // Limítrofes de Paraguay
+        paraguay.agregarLimitrofe(argentina);
+        paraguay.agregarLimitrofe(brasil);
+        paraguay.agregarLimitrofe(bolivia);
+
+        // Limítrofes de Bolivia
+        bolivia.agregarLimitrofe(argentina);
+        bolivia.agregarLimitrofe(brasil);
+        bolivia.agregarLimitrofe(chile);
+        bolivia.agregarLimitrofe(paraguay);
+
+        // Limítrofes de España
+        espana.agregarLimitrofe(francia);
+        espana.agregarLimitrofe(portugal);
+
+        // Limítrofes de Francia
+        francia.agregarLimitrofe(espana);
+        francia.agregarLimitrofe(italia);
+        francia.agregarLimitrofe(alemania);
+        francia.agregarLimitrofe(suiza);
+        francia.agregarLimitrofe(austria);
+
+        // Limítrofes de Italia
+        italia.agregarLimitrofe(francia);
+        italia.agregarLimitrofe(suiza);
+        italia.agregarLimitrofe(austria);
+
+        // Limítrofes de Portugal
+        portugal.agregarLimitrofe(espana);
+
+        // Limítrofes de Alemania
+        alemania.agregarLimitrofe(francia);
+        alemania.agregarLimitrofe(suiza);
+        alemania.agregarLimitrofe(austria);
+
+        // Limítrofes de Suiza
+        suiza.agregarLimitrofe(francia);
+        suiza.agregarLimitrofe(italia);
+        suiza.agregarLimitrofe(alemania);
+        suiza.agregarLimitrofe(austria);
+
+        // Limítrofes de Austria
+        austria.agregarLimitrofe(francia);
+        austria.agregarLimitrofe(italia);
+        austria.agregarLimitrofe(alemania);
+        austria.agregarLimitrofe(suiza);
     }
 
     public Set<Pais> getPaises(String continenteNombre) {
@@ -89,5 +188,13 @@ public class MapaMundial {
             }
         }
         return new HashSet<>();  
+    }
+
+    public java.util.Set<Pais> getLimitrofes(String paisNombre) {
+        Pais pais = buscarPaisPorNombre(paisNombre);
+        if (pais != null) {
+            return pais.getLimitrofes();
+        }
+        return new java.util.HashSet<>();
     }
 }
