@@ -41,4 +41,9 @@ public abstract class Figura {
     // Métodos abstractos 
     public abstract double calcularArea();
     public abstract double calcularPerimetro();
+
+    // Método para mover la figura a una nueva posición
+    public void mover(CoordenadasAlCentro nuevaPosicion) {
+        setPosicion(nuevaPosicion);
+    }
 }

@@ -1,5 +1,3 @@
-
-
 public class Rectangulo extends Figura {
     private Integer lado_mayor;
     private Integer lado_menor;

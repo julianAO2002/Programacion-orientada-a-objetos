@@ -36,12 +36,20 @@ Si Rectángulo tuviera métodos como setLadoMenor() y setLadoMayor(), ¿Cómo de
 ### e)Realice un programa que defina varias figuras diferentes, cree una collection de objetos de la clase Figura.  
 El programa debe realizar un bucle que recorra todas las figuras, las ponga todas del mismo color y las mueva a una determinada posición.
 
-### f) Analice qué ocurre en el ejercicio anterior si se intenta imprimir la información de cada figura (llamando al método toString) y qué sucede si se intenta obtener en ese bucle el área y perímetro de todas las figuras de la collection.
+### f) Analice qué ocurre en el ejercicio anterior si se intenta imprimir la información de cada figura (llamando al método toString) y qué sucede si se intenta obtener en ese bucle el área y perímetro de todas las figuras de la collection.  
+
+Con el polimorfismo, se definen metodos abtractos en la clase Figura y cada clase hija los implementa, al imprimir usando toString se muestra un resultado especifico de cada clase o cada figura, con calculos certeros dependiendo del objeto que se trate.
 
 ### g) Utilice la técnica de polimorfismo para arreglar los comportamientos anómalos detectados en el paso anterior.
-
+Para normalizar comportamientos lo que se hace es definir metodos abtractos como calcularArea, calcularPerimetro y el toString en Figura. Asi, cada clase los manipula de manera correcta segun sus caracteristicas. 
 ### h) ¿Cómo haría para obligar que todas las clases futuras que hereden de Figura tengan al menos los métodos “área” y “perímetro”?  
 ¿Tiene sentido incluir definir dichos métodos en la clase Figura?
+
+Incluir estos metodos en la clase Figura tiene sentido siempre y cuando se definan como abstractos de la siguiente manera:
+##   public abstract double calcularArea();
+##   public abstract double calcularPerimetro();
+
+
 
 ### i) Haga un diagrama de clases que refleja la estructura definida hasta el momento.  
 Añádale las clases: Punto, Línea, Triángulo, Triángulo Rectángulo y Polígono.  
@@ -55,6 +63,6 @@ Añádale las clases: Punto, Línea, Triángulo, Triángulo Rectángulo y Políg
 - Utilizar la anotación `@Override` (en Java) al sobrescribir métodos para ayudar a detectar errores.
 - Seguir convenciones de nomenclatura para clases, métodos y variables.
 - Comentar el código cuando sea necesario.
-
+![alt text](image.png)
 **UADER – Facultad de Ciencia y Tecnología – Licenciatura en Sistemas**  
 

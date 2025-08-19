@@ -1,5 +1,3 @@
-
-
 public class Cuadrado extends Rectangulo {
 
     public Cuadrado(String color, CoordenadasAlCentro centro, String nombre, int lado) {
@@ -24,6 +22,11 @@ public class Cuadrado extends Rectangulo {
         "] [lado_mayor=" + this.getLado_mayor() + 
         ", lado_menor=" + this.getLado_menor() +
          "]\n Area :" + calcularArea() + "\n";
+    }
+
+    @Override
+    public void mover(CoordenadasAlCentro nuevaPosicion) {
+        setPosicion(nuevaPosicion);
     }
 
 

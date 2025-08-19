@@ -16,4 +16,9 @@ public class Circulo extends Elipse {
                ", radio: " + getRadioMayor()
                + "\n Area :" + calcularArea() + "\n";
     }
+
+    @Override
+    public void mover(CoordenadasAlCentro nuevaPosicion) {
+        setPosicion(nuevaPosicion);
+    }
 }
