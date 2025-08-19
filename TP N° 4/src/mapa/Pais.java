@@ -1,14 +1,17 @@
 package mapa;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Pais {
     private String nombre;
     private String capital;
     private Integer superficie;
     private List<Provincia> provincias;
-    
+    private Set<Pais> limitrofes = new HashSet<>();
+
     public Pais(String nombre, String capital, Integer superficie) {
         this.nombre = nombre;
         this.capital = capital;
@@ -46,6 +49,14 @@ public class Pais {
 
     public void addProvincia(Provincia provincia) {
         provincias.add(provincia);
+    }
+
+    public void agregarLimitrofe(Pais pais) {
+        limitrofes.add(pais);
+    }
+
+    public Set<Pais> getLimitrofes() {
+        return limitrofes;
     }
 
     @Override
