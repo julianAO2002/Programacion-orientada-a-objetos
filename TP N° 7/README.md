@@ -1,4 +1,4 @@
-## 1. Objetivos del Trabajo Práctico
+# 1. Objetivos del Trabajo Práctico
 • Comprender la importancia de la programación defensiva para crear software robusto.
 • Aprender a crear y utilizar excepciones personalizadas para un manejo de errores
 específico del dominio del problema.
@@ -6,7 +6,7 @@ específico del dominio del problema.
 excepciones o el uso incorrecto del bloque finally.
 • Refactorizar código existente para mejorar su claridad, seguridad y eficiencia.
 
-## 2. Marco Teórico
+# 2. Marco Teórico
 En la programación, no es suficiente que el código funcione en el "camino feliz" (cuando todo sale
 como se espera). Un software de calidad debe ser capaz de anticipar y manejar situaciones anómalas
 o errores de manera controlada.
@@ -23,12 +23,12 @@ Exception) para representar errores específicos de nuestra aplicación (ej.
 MatrizException, SaldoInsuficienteException). Esto hace que el código sea
 más legible y el manejo de errores más preciso.
 
-## 3. Código Fuente Inicial
+# 3. Código Fuente Inicial
 Codigo usado y reparado en el trabajo actual. Este código es funcional en escenarios ideales, pero
 presenta varias deficiencias en el manejo de errores que deberán ser corregidas (Ya se corrigio en la entrega de este trabajo).
 
-## 4. Consignas del Trabajo
-# Parte A: Mejorar la Clase de Excepción
+# 4. Consignas del Trabajo
+## Parte A: Mejorar la Clase de Excepción
 1. Utilizar Constantes para Códigos de Error: En MatrizException.java, reemplaza
 el uso de "números mágicos" (0, 1, etc.) por constantes públicas estáticas y finales (public
 static final int). Esto hace que el código que lanza la excepción sea más legible.
@@ -36,7 +36,7 @@ static final int). Esto hace que el código que lanza la excepción sea más leg
 todas las validaciones que se implementarán a continuación (ej: dimensiones negativas,
 índices fuera de rango para filas y columnas).
 
-# Parte B: Refactorizar la Clase MatrizObjetos
+## Parte B: Refactorizar la Clase MatrizObjetos
 1. Validación Completa en el Constructor: Mejora el constructor para que valide no solo el
 máximo de columnas, sino también:
 • El máximo de filas (max_rows).
@@ -59,7 +59,7 @@ ocultar los errores.
 • Si son válidos, retorna el objeto.
 • No olvides actualizar la firma del método con throws MatrizException.
 
-# Parte C: Ampliar las Pruebas
+## Parte C: Ampliar las Pruebas
 1. Actualizar la clase App.java: Modifica el método main para que pruebe de forma
 explícita los nuevos casos de error. Asegúrate de incluir:
 • Un bloque try-catch que intente crear una matriz con dimensiones inválidas (ej.
@@ -71,7 +71,7 @@ incorrecto.
 • Imprime mensajes descriptivos en la consola para indicar qué prueba se está
 realizando y qué excepción se capturó.
 
-## 5. Criterios de Evaluación
+# 5. Criterios de Evaluación
 • Correctitud: El código debe compilar sin errores y el comportamiento debe ser el esperado
 según las consignas.
 • Programación Defensiva: Correcta implementación de validaciones proactivas en todos los
