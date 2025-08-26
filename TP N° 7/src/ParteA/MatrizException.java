@@ -1,3 +1,4 @@
+package ParteA;
 /*
  * --acomode los mensajes de error
  * --puse los public static final para q no me salte el error de los nros magicos

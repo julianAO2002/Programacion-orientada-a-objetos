@@ -1,3 +1,4 @@
+package ParteA;
 public class MatrizObjetos {
     static int max_rows = 200;
     static int max_cols = 200;
