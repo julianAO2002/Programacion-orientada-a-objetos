@@ -1,6 +1,3 @@
-
-
-
 public class CoordenadasAlCentro {
     private Integer eje_x;
     private Integer eje_y;
@@ -24,6 +21,11 @@ public class CoordenadasAlCentro {
 
     public void setEje_y(Integer eje_y) {
         this.eje_y = eje_y;
+    }
+
+    public void moverPor(int dx, int dy) {
+        this.eje_x += dx;
+        this.eje_y += dy;
     }
 
     @Override

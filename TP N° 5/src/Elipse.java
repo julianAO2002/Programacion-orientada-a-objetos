@@ -54,4 +54,8 @@ public class Elipse extends Figura {
                 "\n" ;
                
     }
+    @Override
+    public void mover(CoordenadasAlCentro nuevaPosicion) {
+        setPosicion(nuevaPosicion);
+    }
 }
