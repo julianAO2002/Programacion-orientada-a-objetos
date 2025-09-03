@@ -1,0 +1,26 @@
+
+
+public class TareaMultiplicacion implements Runnable {
+    private int[][] A;
+    private int[][] B;
+    private int[][] C;
+    private int fila;
+    private int columna;
+
+    public TareaMultiplicacion(int[][] A, int[][] B, int[][] C, int fila, int columna) {
+        this.A = A;
+        this.B = B;
+        this.C = C;
+        this.fila = fila;
+        this.columna = columna;
+    }
+
+    @Override
+    public void run() { //aca el run me hace el recorrido de filas y me las guarda en la var
+        int suma = 0;
+        for (int k = 0; k < A[0].length; k++) { 
+            suma += A[fila][k] * B[k][columna];
+        }
+        C[fila][columna] = suma;
+    }
+}
