@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public  class MultiplicadorMatrices {
+    public static void main(String[] args) {
+        int[][] A = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+        
+        int[][] B = {
+            {7, 8},
+            {9, 10},
+            {11, 12}
+        };
+
+        //hasta aca cree las matrices a y b
+
+        //inicializacion de c
+        int filas = A.length;
+        int columnas = B[0].length;
+        int[][] C = new int[filas][columnas];
+
+        List<Thread> hilos = new ArrayList<>(); //esta es la parte del main tal cual
+
+        // creo y lanzo un hilo por cada celda de c
+        for (int i = 0; i < filas; i++) { 
+            for (int j = 0; j < columnas; j++) {
+                TareaMultiplicacion tarea = new TareaMultiplicacion(A, B, C, i, j);
+                Thread hilo = new Thread(tarea);
+                hilo.start(); 
+                hilos.add(hilo); //hasta aca complete todo el main 
+            }
+        }
+
+        // espero a que todos los hilos terminen con el join
+        for (Thread hilo : hilos) {
+            try {
+                hilo.join(); // este es el paso 3 del punto 2, conceptos claves<3 y la sincronizacion
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Matriz resultante:"); //aca imprimo
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                System.out.print(C[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+    
+
+}
