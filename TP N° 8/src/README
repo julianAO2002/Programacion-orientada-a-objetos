@@ -1,0 +1,5 @@
+¿por que implements runnable suele ser preferible a exends  thread?
+
+Al heredar de thread no se puede heredar de otra clase, se opta por utilizar implements runnable con el fin de usar el metodo *run* que permite heredar de otras clases
+
+
