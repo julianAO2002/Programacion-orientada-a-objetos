@@ -1,0 +1,52 @@
+package pila;
+
+public class TestGenericos {
+    //mis metodos 
+    public static void intercambiarInt(int[] array, int i, int j ){
+        int aux = array[i];
+        array[i] = array[j];
+        array[j] = aux;
+    }
+    
+    public static void intercambiarString(String[]array, int i, int j){
+        String aux = array[i];
+        array[i] = array[j];
+        array[j] = aux;
+    }
+    public static void intercambiarDouble(Double[]array, int i, int j){
+        Double aux = array[i];
+        array[i] = array[j];
+        array[j] = aux;
+    }
+    public static void main(String[] args) {
+    // Prueba con un array de Integers
+        Integer[] numeros = {10, 20, 30, 40, 50};
+        System.out.println("Array de enteros original:");
+        ArrayUtils.imprimirArray(numeros);
+
+        ArrayUtils.intercambiar(numeros, 1, 3); // Intercambia 20 y 40
+
+        System.out.println("Array de enteros después del intercambio:");
+        ArrayUtils.imprimirArray(numeros);
+    
+
+        System.out.println("\n---------------------------------\n");
+
+        // Prueba con un array de Strings
+        String[] palabras = {"Hola", "Mundo", "desde", "Java"};
+        System.out.println("Array de strings original:");
+        ArrayUtils.imprimirArray(palabras);
+
+        ArrayUtils.intercambiar(palabras, 0, 2); // Intercambia "Hola" y "desde"
+        
+        System.out.println("Array de strings después del intercambio:");
+        ArrayUtils.imprimirArray(palabras);
+
+        /*
+        -----------mi prueba para los double
+        double[] decimales = {1.5, 2.5, 3.5};
+        intercambiarDouble(decimales, 1, 2);
+        System.out.println("manual para Double"); */
+    
+    }
+}
